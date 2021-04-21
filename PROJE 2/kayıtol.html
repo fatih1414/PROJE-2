@@ -1,0 +1,68 @@
+<html>
+<head>
+  <title>Tasarım Kodlama</title>
+  <link rel="stylesheet" type="text/css" href="sayfa.css" />
+</head>
+<body>
+<br><br><br><br>
+  <div id="sayfa">
+    <label>Ad:</label>    <input type="text"  id="ad">
+    <label>Soyad:</label> <input type="text"  id="soyad">
+    <label>Yaş:</label>   <input type="number"  id="yas">
+    <button id="listele">LİSTELE</button>	
+	
+  <table id="liste">
+  
+      <tr>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Yaş</th>
+      </tr>
+  </table>
+  </div>
+    
+ 
+  <script>
+    const ad=document.querySelector("#ad");
+    const soyad=document.querySelector("#soyad");
+    const yas=document.querySelector("#yas");
+    const listele=document.querySelector("#listele");
+    const liste=document.querySelector("#liste");
+ 
+    listele.onclick=function(){
+      
+      
+      
+      let tAd=document.createElement("td");
+      let tSoyad=document.createElement("td");
+      let tYas=document.createElement("td");
+ 
+      tAd.textContent=ad.value;
+      tSoyad.textContent=soyad.value;
+      tYas.textContent=yas.value;
+ 
+     
+      let tr=document.createElement("tr");
+ 
+      
+      tr.appendChild(tAd);
+      tr.appendChild(tSoyad);
+      tr.appendChild(tYas);
+ 
+      
+      liste.appendChild(tr);
+ 
+      
+      ad.value="";
+      soyad.value="";
+      yas.value="";
+ 
+      
+      ad.focus();
+    }
+ 
+  </script>
+  
+</body>
+</html>
+ 
